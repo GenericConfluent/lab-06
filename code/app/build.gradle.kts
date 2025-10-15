@@ -1,3 +1,6 @@
+import org.gradle.kotlin.dsl.testImplementation
+import org.gradle.kotlin.dsl.testRuntimeOnly
+
 plugins {
     alias(libs.plugins.android.application)
 }
@@ -32,7 +35,7 @@ android {
 }
 
 dependencies {
-
+    implementation(files("/home/generic/Android/Sdk/platforms/android-35/android.jar"))
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -40,4 +43,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    testImplementation (libs.junit.jupiter.api)
+    testRuntimeOnly (libs.jupiter.junit.jupiter.engine)
 }
